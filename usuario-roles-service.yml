@@ -1,7 +1,9 @@
 server:
   port: ${PORT:9091}
-message: Congifuracion de Usuario roles en el servidor levantado
+message: Configuración de Usuario roles en el servidor levantado
 spring:
+  config:
+    import: configserver:  # Añadir esta línea
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: 123456789
@@ -14,4 +16,3 @@ spring:
   cloud:
     config:
       uri: http://localhost:9090
-  
