@@ -14,3 +14,5 @@ spring:
   cloud:
     config:
       uri: http://localhost:9090
+      import-check:
+        enabled: false  # Añadir esta línea aquí
