@@ -1,3 +1,7 @@
+spring:
+  config:
+    import: "optional:configserver:"  # Importación opcional del servidor de configuración
+
 server:
   port: ${PORT:9091}
 message: Configuracion de Usuario roles en el servidor levantado
@@ -12,8 +16,6 @@ spring:
     hibernate:
       ddl-auto: update
       database-platform: org.hibernate.dialect.MySQLDialect
-  config:
-    import: "optional:configserver:"  # Esto asegura que la configuración sea opcional
 
 cloud:
   config:
