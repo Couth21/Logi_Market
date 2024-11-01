@@ -1,7 +1,6 @@
 server:
   port: ${PORT:9091}
-message: Configuracion de Usuario roles en el servidor levantado
-
+message: Congifuracion del usuario con su rol en el  servidor levantado
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -12,7 +11,6 @@ spring:
     hibernate:
       ddl-auto: update
       database-platform: org.hibernate.dialect.MySQLDialect
-
-cloud:
-  config:
-    uri: http://localhost:9090
+  cloud:
+    config:
+      uri: http://localhost:9090
