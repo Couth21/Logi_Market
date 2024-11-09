@@ -1,16 +1,27 @@
 server:
   port: ${PORT:8080}
-message: Congifuracion del usuario con su rol en el  servidor levantado
+message: Configuración del servicio de autenticación con roles y JWT en el servidor levantado
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: 123456789
     url: jdbc:mysql://localhost:3306/logi_market_dba?serverTimezone=UTC
     username: root
+    password: 123456789
   jpa:
     hibernate:
       ddl-auto: update
-      database-platform: org.hibernate.dialect.MySQLDialect
+    database-platform: org.hibernate.dialect.MySQLDialect
+
   cloud:
     config:
       uri: http://localhost:9090
+
+jwt:
+  secret: mysecretkey  # Cambia esto por una clave secreta segura en producción
+  expiration: 3600000  # Tiempo de expiración en milisegundos (1 hora)
+
+logging:
+  level:
+    root: INFO
+    com.springboot: DEBUG  # Para mayor visibilidad en los logs de tu aplicación
